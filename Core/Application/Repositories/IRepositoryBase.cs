@@ -2,7 +2,7 @@
 
 namespace Application.Repositories
 {
-    public interface IRepositoryBase<T> where T : class
+    public interface IRepositoryBase<T>
     {
         IQueryable<T> GetAll(bool tracking = true); // Hepsini Getir.
         IQueryable<T> GetWhere(Expression<Func<T, bool>> method, bool tracking = true); // Şarta uygun olanları getir.
