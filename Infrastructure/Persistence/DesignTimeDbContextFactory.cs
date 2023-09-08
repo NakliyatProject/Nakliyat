@@ -17,7 +17,6 @@ namespace Persistence
             DbContextOptionsBuilder<NakliyatDbContext> dbContextOptionsBuilder = new();
             dbContextOptionsBuilder.UseNpgsql(Configuration.ConnectionString);
             return new(dbContextOptionsBuilder.Options);
-
         }
     }
 }

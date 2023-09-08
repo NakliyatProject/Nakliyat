@@ -1,0 +1,29 @@
+﻿@model User
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="text-center">
+            <h6 class="display-6">
+                @Model.UserName
+            </h6>
+
+            <p class="lead text-secondary">@Model.Email</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="text-center">
+
+    <div class="btn-group">
+        <a class="btn btn-outline-primary"asp-action="Index">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+        <a class="btn btn-outline-primary"asp-action="Index">
+            <i class="fa-solid fa-list"></i>
+            Users
+        </a>
+    </div>
+
+</div>
