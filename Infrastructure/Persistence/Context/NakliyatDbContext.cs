@@ -11,6 +11,15 @@ namespace Persistence.Context
         public NakliyatDbContext(DbContextOptions options) : base(options) { }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<CompanyReview> CompanyReviews { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<TransportationTeam> TransportationTeams { get; set; }
+        public DbSet<TransportRequest> TransportRequests { get; set; }
+        public DbSet<UsedVehicle> UsedVehicles { get; set; }
+
+
+
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
