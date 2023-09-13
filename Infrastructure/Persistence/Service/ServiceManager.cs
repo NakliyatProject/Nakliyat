@@ -18,5 +18,13 @@ namespace Persistence.Service
         }
 
         public IUserService UserService => _userService;
+
+        public IUserService CompanyService 
+        {
+            set
+            {
+                CompanyService = _userService;
+            }
+        }
     }
 }

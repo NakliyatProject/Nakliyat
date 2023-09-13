@@ -3,20 +3,17 @@ using Domain.Entities.Common;
 using Microsoft.EntityFrameworkCore;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using System.Net.Sockets;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using System.Reflection;
 
 namespace Persistence.Context
 {
-    public class NakliyatDbContext : DbContext
+    public class NakliyatDbContext : IdentityDbContext<IdentityUser>
     {
         public NakliyatDbContext(DbContextOptions options) : base(options) { }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<Company> Companies { get; set; }
-        public DbSet<CompanyReview> CompanyReviews { get; set; }
-        public DbSet<Review> Reviews { get; set; }
-        public DbSet<TransportationTeam> TransportationTeams { get; set; }
-        public DbSet<TransportRequest> TransportRequests { get; set; }
-        public DbSet<UsedVehicle> UsedVehicles { get; set; }
 
 
 
@@ -44,15 +41,8 @@ namespace Persistence.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<User>()
-                .HasData(
-                    new User() { Id = Guid.NewGuid(), UserName = "User 1", UserSurname = "Surname", Email = "user1@gmail.com", UserRole = "Company", CreatedDate = DateTime.UtcNow },
-                    new User() { Id = Guid.NewGuid(), UserName = "User 2", UserSurname = "Surname", Email = "user2@gmail.com", UserRole = "Customer", CreatedDate = DateTime.UtcNow },
-                    new User() { Id = Guid.NewGuid(), UserName = "User 3", UserSurname = "Surname", Email = "user3@gmail.com", UserRole = "Customer", CreatedDate = DateTime.UtcNow },
-                    new User() { Id = Guid.NewGuid(), UserName = "User 4", UserSurname = "Surname", Email = "user4@gmail.com", UserRole = "Company", CreatedDate = DateTime.UtcNow },
-                    new User() { Id = Guid.NewGuid(), UserName = "User 5", UserSurname = "Surname", Email = "user5@gmail.com", UserRole = "Customer", CreatedDate = DateTime.UtcNow }
-                );
 
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }

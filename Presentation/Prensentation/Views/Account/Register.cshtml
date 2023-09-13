@@ -1,0 +1,14 @@
+﻿@model RegisterDto
+
+<div class="loginBody">
+    <div class="loginBox">
+        <img class="user" src="https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg">
+        <h2>Sign Up</h2>
+        <form method="post" asp-action="Register">
+            <input type="text" asp-for="UserName" placeholder="Enter Username" required>
+            <input type="email" asp-for="Email" placeholder="Enter Email" required>
+            <input type="password" asp-for="Password" placeholder="Enter Password">
+            <input type="submit" name="sign-up" value="Sign Up">
+        </form>
+    </div>
+</div>

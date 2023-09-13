@@ -10,8 +10,8 @@ namespace Application.Service
 {
     public interface IUserService
     {
-        IQueryable<User> GetAll(bool tracking = true); // Hepsini Getir.
-        IQueryable<User> GetWhere(Expression<Func<User, bool>> method, bool tracking = true); // Şarta uygun olanları getir.
+        IEnumerable<User> GetAll(bool tracking = true); // Hepsini Getir.
+        IEnumerable<User> GetWhere(Expression<Func<User, bool>> method, bool tracking = true); // Şarta uygun olanları getir.
         Task<User> GetSingleAsync(Expression<Func<User, bool>> method, bool tracking = true); // Şarta uygun olan ilkini getir.
         Task<User> GetByIdAsync(string id, bool tracking = true); // İstenilen Id değerine sahip olanı getir.
         Task<bool> AddAsync(User model); // Data ekle.

@@ -1,0 +1,18 @@
+﻿@model LoginModel
+
+<div class="loginBody">
+    <div class="loginBox">
+        <img class="user" src="https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg">
+        <h2>Log In </h2>
+        <form method="post" asp-action="Login">
+            <input type="email" asp-for="Name" placeholder="Enter Username" required>
+            
+            <input type="password" asp-for="Password" placeholder="Enter Password">
+            <input type="submit" name="sign-in" value="Sign In">
+            <a href="#">Forget Password</a>
+            <div class="signup-link text-white">
+                Not a member? <a class="text-warning" asp-action="Register">Signup now</a>
+            </div>
+        </form>
+    </div>
+</div>

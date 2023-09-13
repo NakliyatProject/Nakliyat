@@ -20,11 +20,11 @@ namespace Persistence.Service
             _repositoryManager = repositoryManager;
         }
 
-        public IQueryable<User> GetAll(bool tracking = true)
+        public IEnumerable<User> GetAll(bool tracking = true)
         {
             return _repositoryManager.UserRepository.GetAll(tracking);
         }
-        public IQueryable<User> GetWhere(Expression<Func<User, bool>> method, bool tracking = true)
+        public IEnumerable<User> GetWhere(Expression<Func<User, bool>> method, bool tracking = true)
         {
             return _repositoryManager.UserRepository.GetWhere(method, tracking);
         }

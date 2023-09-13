@@ -1,4 +1,5 @@
 using Persistence;
+using Prensentation.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddPersistenceServices();
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.ConfigureIdentity();
 
 var app = builder.Build();
 
@@ -22,10 +25,25 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+
+app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapAreaControllerRoute(
+        name: "Customer",
+        areaName: "Customer",
+        pattern: "Customer/{controller=Home}/{action=Index}/{id?}"
+    );
+    endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+
+});
+
+app.ConfigureAndCheckMigration();
+
+app.ConfigureLocalization();
+
+app.ConfigureDefaultAdminUser();
 
 app.Run();
