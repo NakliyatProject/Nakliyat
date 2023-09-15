@@ -6,58 +6,32 @@
     <title>@ViewData["Title"] - TasımaUrasma</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/card.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Prensentation.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-transparent border-bottom box-shadow mb-3">
-            <div class="container-fluid mx-lg-5">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TasımaUrasma</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item mx-lg-2">
-                            <a class="nav-link text-light btn-home custom-button" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item mx-lg-2">
-                            <a class="nav-link text-light btn-hover custom-button" asp-area="" asp-controller="User" asp-action="Index">Taşıma Talebi Oluştur</a>
-                        </li>
-                        <li class="nav-item mx-lg-2">
-                            <a class="nav-link text-light btn-hover custom-button" asp-area="" asp-controller="User" asp-action="Index">Mevcut Talepler</a>
-                        </li>
-                        <li class="nav-item mx-lg-2">
-                            <a class="nav-link text-light btn-hover custom-button" asp-area="" asp-controller="User" asp-action="Index">Nasıl Çalışır</a>
-                        </li>
-                        <li class="nav-item mx-lg-2">
-                            <a class="nav-link text-light btn-hover custom-button" asp-area="" asp-controller="User" asp-action="Index">Destek</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <partial name="_LoginMenu"></partial>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<body style="background-color:rgba(239, 240, 223, 0.41);">
+
+    <header class="pb-5">
+        <partial name="_Navbar" class="navbar-top" />
     </header>
-    <div class="container">
+
+    <div class="container pb-5" >
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Prensentation - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    <footer>
+        @RenderSection("Footer",false)
+        <partial name="_Footer"></partial>
     </footer>
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/font-awesome/js/all.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

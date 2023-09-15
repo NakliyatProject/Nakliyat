@@ -14,36 +14,106 @@ html {
 }
 
 /******************---------NAVBAR STYLE--------********************/
-/* styles.css */
-/* Düðme üzerine geldiðinde hover efekti ekleyin */
 .custom-button {
-    padding: 3px 70px; /* Ýç margin deðerlerini ayarlayýn (örnekte 15px üst-alt, 20px sol-sað iç kenar boþluðu) */
+    padding: 3px 70px;
 }
 .btn-hover {
+    margin-bottom: 2px;
+    max-width: 200px;
     border-radius: 20px;
 }
-.btn-hover:hover {
-    background-color: #2772db !important; /* "warning" rengi */
-    color: #fff; /* Yazý rengini beyaz yapabilirsiniz */
-}
-.btn-home {
-    border-radius: 20px;
-    background-color: #2772db !important; /* "warning" rengi */
-    color: #fff; /* Yazý rengini beyaz yapabilirsiniz */
-}
-    .btn-home:hover {
-        background-color: #fff !important; /* "warning" rengi */
-        color: #2772db !important; /* Yazý rengini beyaz yapabilirsiniz */
+    .btn-hover:hover {
+        background-color: #2772db !important;
+        color: azure !important;
     }
+.btn-home {
+    margin-bottom: 2px;
+    border-radius: 20px;
+    background-color: #2772db !important;
+    color: #fff !important;
+    max-width: 200px;
+    text-align: center;
+}
+.btn-home:hover {
+    background-color: #fff !important; 
+    color: #2772db !important; 
+}
 /******************-----NAVBAR STYLE FINISH-----********************/
+/******************-----BTN LOGIN STYLE-----********************/
+.Btn-Login {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: #3B71CA;
+}
+
+/* plus sign */
+.sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .sign svg {
+        width: 17px;
+    }
+
+        .sign svg path {
+            fill: white;
+        }
+/* text */
+.text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 60;
+    transition-duration: .3s;
+}
+/* hover effect on button width */
+.Btn-Login:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+}
+
+    .Btn-Login:hover .sign {
+        width: 30%;
+        transition-duration: .3s;
+        padding-left: 20px;
+    }
+    /* hover effect button's text */
+    .Btn-Login:hover .text {
+        opacity: 1;
+        width: 70%;
+        transition-duration: .3s;
+        padding-right: 10px;
+    }
+/* button click effect*/
+.Btn-Login:active {
+    transform: translate(2px,2px);
+}
 /******************-----LOGIN SAYFASI STYLE-----********************/
-Body {
-    margin: 0;
-    padding: 0;
+.body-home {
     background: url(bg.jpg);
     background-image: url("https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?cs=srgb&dl=pexels-veeterzy-39811.jpg&fm=jpg");
     background-size: 100% 100%;
     background-size: cover;
+    background-attachment: fixed;
+    background-color: white;
     font-family: arial;
     text-align: center;
     margin-bottom: 60px;

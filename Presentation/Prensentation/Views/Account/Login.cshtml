@@ -1,18 +1,90 @@
 ﻿@model LoginModel
 
-<div class="loginBody">
-    <div class="loginBox">
-        <img class="user" src="https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg">
-        <h2>Log In </h2>
-        <form method="post" asp-action="Login">
-            <input type="email" asp-for="Name" placeholder="Enter Username" required>
-            
-            <input type="password" asp-for="Password" placeholder="Enter Password">
-            <input type="submit" name="sign-in" value="Sign In">
-            <a href="#">Forget Password</a>
-            <div class="signup-link text-white">
-                Not a member? <a class="text-warning" asp-action="Register">Signup now</a>
+<style>
+    .body-home{
+        background-image: url("https://wallpapercrafter.com/desktop2/734444-landscape-snowy-peak-lines-hills-dark-road-forest.jpg");
+    }
+
+    .button-login {
+        font-family: monospace;
+        background-color: #0d6efd;
+        color: #fff;
+        border: none;
+        border-radius: 17px;
+        width: 100px;
+        height: 35px;
+        transition: .3s;
+    }
+
+        .button-login:hover {
+            background-color: #f3f7fe;
+            box-shadow: 0 0 0 5px #3b83f65f;
+            color: #0d6efd;
+        }
+
+
+        .text-login{
+            background: rgba(5, 5, 5, 0.6) !important;
+        }
+
+
+    .top-image {
+        background-image: none; /* Resminizin yolunu buraya ekleyin */
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        height: 10vh; /* İstediğiniz yüksekliği ayarlayın */
+        width: 10%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+
+
+</style>
+<div>
+    <div class="text-center my-2">
+        <h6 class="display-6">
+            <i class="fa-solid fa-right-to-bracket text-light bg-primary p-3 rounded-pill"></i>
+            <br />
+            Login
+        </h6>
+
+    </div>
+
+    <div class="row text-dark">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div>
+                <div class="text-danger" asp-validation-summary="All"></div>
             </div>
-        </form>
+            <form method="post" asp-action="Login">
+
+                <input type="hidden" asp-for="ReturnUrl" />
+
+                <div class="form-group my-3">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control text-login text-light" />
+
+                </div>
+                <div class="form-group my-3 ">
+                    <label asp-for="Password"></label>
+                    <input type="Password" asp-for="Password" class="form-control text-login text-light" />
+
+                </div>
+                <div class="form-group my-3 d-flex justify-content-center">
+                    <button type="submit" class="button-login ">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        Login
+                    </button>
+                </div>
+            </form>
+
+            <div class="text-secondary">
+                If you don't have an account. Please click here to achieve <a class="text-primary" asp-action="Register"> registeration page.</a>
+            </div>
+        </div>
     </div>
 </div>
+

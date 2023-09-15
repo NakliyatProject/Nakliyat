@@ -1,14 +1,72 @@
 ﻿@model RegisterDto
 
-<div class="loginBody">
-    <div class="loginBox">
-        <img class="user" src="https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg">
-        <h2>Sign Up</h2>
+<style>
+    .body-home {
+        background-image: url("https://wallpapercrafter.com/desktop2/734444-landscape-snowy-peak-lines-hills-dark-road-forest.jpg");
+    }
+
+    .button-login {
+        font-family: monospace;
+        background-color: #0d6efd;
+        color: #fff;
+        border: none;
+        border-radius: 17px;
+        width: 100px;
+        height: 35px;
+        transition: .3s;
+    }
+
+        .button-login:hover {
+            background-color: #f3f7fe;
+            box-shadow: 0 0 0 5px #3b83f65f;
+            color: #0d6efd;
+        }
+
+
+    .text-login {
+        background: rgba(5, 5, 5, 0.6) !important;
+    }
+
+</style>
+
+
+<div class="text-center my-2">
+    <h6 class="display-6">
+        <i class="fa-solid fa-user-plus text-white bg-primary p-3 rounded-pill"></i>
+        <br />
+        Register
+    </h6>
+
+</div>
+
+<div class="row text-dark">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div>
+            <div class="text-danger" asp-validation-summary="All"></div>
+        </div>
         <form method="post" asp-action="Register">
-            <input type="text" asp-for="UserName" placeholder="Enter Username" required>
-            <input type="email" asp-for="Email" placeholder="Enter Email" required>
-            <input type="password" asp-for="Password" placeholder="Enter Password">
-            <input type="submit" name="sign-up" value="Sign Up">
+
+            <div class="form-group my-3">
+                <label asp-for="UserName"></label>
+                <input asp-for="UserName" class="form-control text-login text-light" />
+
+            </div>
+            <div class="form-group my-3">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control text-login text-light" />
+
+            </div>
+            <div class="form-group my-3">
+                <label asp-for="Password"></label>
+                <input type="Password" asp-for="Password" class="form-control text-login text-light" />
+            </div>
+            <div class="form-group my-3 d-flex justify-content-center">
+                <button type="submit" class="button-login">
+                    <i class="fa-solid fa-xs fa-user-plus"></i>
+                    SignUp
+                </button>
+            </div>
         </form>
     </div>
 </div>

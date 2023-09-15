@@ -2,8 +2,30 @@
 @{
     ViewData["Title"] = "Users";
 }
+<style>
+    .top-image {
+        background-image: none; /* Resminizin yolunu buraya ekleyin */
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        height: 10vh; /* İstediğiniz yüksekliği ayarlayın */
+        width: 10%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
 
-<div class="text-center">
+    .navbar-bg {
+        background-color: #bebbb7;
+    }
+
+    .container {
+        padding-top: 20px; /* Üstteki boşluğu ayarlayın */
+    }
+</style>
+
+<div class="text-center" style="padding-bottom: 200px;">
     <div class="display-6">Users</div>
 
     <div class="d-flex justify-content-end my-3">

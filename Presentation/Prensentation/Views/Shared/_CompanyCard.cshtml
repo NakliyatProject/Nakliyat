@@ -1,0 +1,46 @@
+﻿<style>
+    :root {
+        --gradient: linear-gradient(to left top, #0e2f59,#17519c 90%) !important;
+    }
+
+    .card-company {
+        background: rgba(0, 0, 0, 0.6);
+        border: 1px solid #1557ad,;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 2rem;
+    }
+
+    .btn-card {
+        border: 3px solid;
+        border-image-slice: 1;
+        background: var(--gradient) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: #fff !important;
+        border-image-source: var(--gradient) !important;
+        text-decoration: none;
+        transition: all .4s ease;
+    }
+
+        .btn-card:hover, .btn:focus {
+            background: var(--gradient) !important;
+            -webkit-background-clip: none !important;
+            -webkit-text-fill-color: #fff !important;
+            border: 3px solid #fff !important;
+            box-shadow: #222 1px 0 10px;
+        }
+
+</style>
+
+
+<div class="col-sm-12 col-md-4 m-0">
+    <div class="card card-company" style="width: 17rem;">
+        <img src="\images\default.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn mr-2 btn-card"><i class="fas fa-link text-white"></i> Visit Site</a>
+            <a href="#" class="btn btn-card rounded-"><i class="fab fa-github text-white"></i> Github</a>
+        </div>
+    </div>
+</div>

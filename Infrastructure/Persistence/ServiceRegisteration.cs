@@ -18,6 +18,7 @@ namespace Persistence
 
 
             services.AddScoped<IServiceManager, ServiceManager>();
+            services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IUserService, UserService>();
 
 

@@ -4,7 +4,9 @@ namespace Application.Service
 {
     public interface IServiceManager
     {
-        public IUserService UserService { get; }
+        IUserService UserService { get; }
+
+        IAuthService AuthService { get; }
 
     }
 }
