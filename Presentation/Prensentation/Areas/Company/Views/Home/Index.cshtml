@@ -1,1 +1,286 @@
-<partial name="_HomePage" />
+@{
+    ViewData["Title"] = "Company Page";
+}
+<style>
+    /* Hizmetlerin stilini özelleþtirin */
+    .service-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .service-item {
+        margin-bottom: 20px;
+    }
+
+    .service-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+
+    .service-description {
+        font-size: 16px;
+        color: #666;
+    }
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        border-radius: 10px;
+        margin-bottom: 50px;
+    }
+
+    .center2 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        margin-bottom: 50px;
+    }
+
+
+    .nedenbiz {
+        text-align: center;
+    }
+
+    .nedenbiz2 {
+        width: 100% height: 100%
+    }
+
+
+    .navbar-top {
+        z-index: 1000; /* Daha büyük bir z-index deðeri kullanabilirsiniz */
+        position: relative;
+    }
+
+
+
+
+
+
+    .card2-container {
+        display: flex;
+        justify-content: space-between; /* Kartlar arasýnda boþluk býrakýr */
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+
+    .card2 {
+        background-color: rgba(243, 244, 246, 1);
+        padding: 2rem;
+        max-width: 320px;
+        border-radius: 10px;
+        box-shadow: 0 20px 30px -20px rgba(5, 5, 5, 0.24);
+        margin-right: 50px;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        grid-gap: 1rem;
+        gap: 1rem;
+    }
+
+        .header .image {
+            height: 4rem;
+            width: 4rem;
+            border-radius: 9999px;
+        }
+
+
+
+
+
+    .name {
+        margin-top: 0.25rem;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        font-weight: 600;
+        --tw-text-opacity: 1;
+        color: rgba(55, 65, 81, 1);
+    }
+
+    .message {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        margin-top: 1rem;
+        color: rgba(107, 114, 128, 1);
+    }
+
+
+
+
+
+
+
+
+    .user-avatar {
+        width: 62px;
+        height: 62px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 10px;
+    }
+
+    .user-details {
+        display: flex;
+        align-items: center;
+    }
+
+    .checked {
+        color: gold;
+    }
+
+    .stars {
+        margin-top: -20px;
+        margin-left: 70px;
+    }
+
+</style>
+<div class="container">
+    <section>
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="display-4" style="text-align:center">Ýþinizi Büyütmek Ýçin Doðru Yerdesiniz. </h1>
+                <p class="lead" style="text-align:center">Nakliyat Þirketlerinin ve Müþterilerin Buluþtuðu Adrestesiniz.</p>
+                <hr class="my-4">
+                <img class="center2" src="/images/ctransportation.png" />
+               <br>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+
+        <h1 style="margin-top:-50px;">Hizmetler ve Avantajlar</h1>
+        <hr class="my-4">
+        <ul class="service-list">
+
+            <li class="service-item">
+                <div class="service-title">Geniþ Müþteri Kitlesi</div>
+                <div class="service-description">
+                    Platformumuz, her tür nakliyat hizmeti sunan þirketler için geniþ bir müþteri kitlesine eriþim saðlar.
+                </div>
+            </li>
+            <li class="service-item">
+                <div class="service-title">Reklam ve Pazarlama Desteði</div>
+                <div class="service-description">
+                    Nakliyat iþinizi büyütmenize yardýmcý olmak için reklam ve pazarlama desteði sunuyoruz. Profesyonel bir þekilde tanýtýlmak, daha fazla müþteri çekmek için önemlidir.
+                </div>
+            </li>
+            <li class="service-item">
+                <div class="service-title">Güven ve Ýtibar</div>
+                <div class="service-description">
+                    Platformumuz, güvenilir ve kaliteli nakliyat hizmetleri sunan þirketlere odaklanýr. Müþteriler, güvendikleri ve itibarlý þirketlerle çalýþmayý tercih ederler.
+                </div>
+            </li>
+            <li class="service-item">
+                <div class="service-title">Geribildirim ve Ýncelemeler</div>
+                <div class="service-description">
+                    Müþteri geribildirimleri ve incelemeleri, þirketinizi geliþtirmeniz için önemli bir geri bildirim kaynaðýdýr. Olumlu incelemeler, yeni müþteriler çekmek için büyük bir avantajdýr.
+                </div>
+            </li>
+        </ul>
+
+    </section>
+
+    <div class="features-list row nedenbiz">
+        <div class="col-sm-6 col-md-3">
+            <img class="section-features-img d-block  mx-auto mt-lg-5 mb-3 nedenbiz2" src="https://cdn-icons-png.flaticon.com/128/2083/2083090.png" loading="lazy" alt="Fast and Easy" width="51" height="63" />
+            <h3 class="section-features-h3 nedenbiz ">Fast and Easy</h3>
+            <p class="section-features-p ">Complete one simple form and quotes come to you via email. Hassle-free, no phone calls required.</p>
+        </div>
+        <div class="col-sm-6 col-md-3 section-features-col1">
+            <img class="section-features-img d-block  mx-auto mt-lg-5 mb-3 nedenbiz2" src="https://cdn-icons-png.flaticon.com/512/3045/3045754.png" loading="lazy" alt="Trustworthy" width="52" height="63" />
+            <h3 class="section-features-h3 nedenbiz">Trustworthy</h3>
+            <p class="section-features-p ">All courier services on Shiply are feedback rated for your peace of mind.</p>
+        </div>
+        <div class="col-sm-6 col-md-3 section-features-col2">
+            <img class="section-features-img d-block  mx-auto mt-lg-5 mb-3 nedenbiz2" src="https://cdn-icons-png.flaticon.com/128/1739/1739834.png" loading="lazy" alt="Great Prices" width="78" height="63" />
+            <h3 class="section-features-h3 nedenbiz">Great Prices</h3>
+            <p class="section-features-p ">As Shiply's courier services are already making similar trips, quotes are up to 75% cheaper than standard rates.</p>
+        </div>
+        <div class="col-sm-6 col-md-3 section-features-col2">
+            <img class="section-features-img d-block  mx-auto mt-lg-5 mb-3 nedenbiz2" src="https://cdn-icons-png.flaticon.com/128/4363/4363489.png" loading="lazy" alt="Helpful" width="63" height="63" />
+            <h3 class="section-features-h3 nedenbiz">Helpful</h3>
+            <p class="section-features-p ">Need assistance? Email or call us. We are here to help.</p>
+        </div>
+    </div>
+
+    <section>
+
+        <h1 style="margin-top:20px;">Kullanýcý Yorumlarý</h1>
+        <div class="card2-container">
+            <div class="row">
+            </div>
+        </div>
+
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="user-details">
+                            <img src="https://img.ekstat.com/profiles/deliadam-637469650746732360.jpg" alt="Kullanýcý 1" class="user-avatar">
+                            <h4 class="card-title">Kullanýcý 1</h4>
+                        </div>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <p class="card-text">"Sitenin bize getirdiði müþterilerle iþ hacmimizi iki katýna çýkardýk."  <br><br />  </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="user-details">
+                            <img src="https://img.ekstat.com/profiles/deliadam-637469650746732360.jpg" alt="Kullanýcý 1" class="user-avatar">
+                            <h4 class="card-title">Kullanýcý 1</h4>
+                        </div>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                        <p class="card-text">"Güvenilir ve etkili bir platform, müþterilere ulaþmak için harika bir yol." <br><br />   </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="user-details">
+                            <img src="https://img.ekstat.com/profiles/deliadam-637469650746732360.jpg" alt="Kullanýcý 1" class="user-avatar">
+                            <h4 class="card-title">Kullanýcý 1</h4>
+                        </div>
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <p class="card-text">"Platforma katýldýðýmýzdan beri iþimizde büyük bir deðiþiklik gördük. Kesinlikle tavsiye ederim!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

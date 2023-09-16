@@ -19,46 +19,46 @@
         font-weight: bold;
     }
 
-         .arrow-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    .arrow-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-         .arrow {
-            margin-top: 1px;
-            width: var(--arrow-width);
-            background: var(--primary-color);
-            height: var(--arrow-stroke);
-            position: relative;
+    .arrow {
+        margin-top: 1px;
+        width: var(--arrow-width);
+        background: var(--primary-color);
+        height: var(--arrow-stroke);
+        position: relative;
+        transition: 0.2s;
+    }
+
+        .arrow::before {
+            content: "";
+            box-sizing: border-box;
+            position: absolute;
+            border: solid var(--secondary-color);
+            border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+            display: inline-block;
+            top: -3px;
+            right: 3px;
             transition: 0.2s;
+            padding: 3px;
+            transform: rotate(-45deg);
         }
 
-             .arrow::before {
-                content: "";
-                box-sizing: border-box;
-                position: absolute;
-                border: solid var(--secondary-color);
-                border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
-                display: inline-block;
-                top: -3px;
-                right: 3px;
-                transition: 0.2s;
-                padding: 3px;
-                transform: rotate(-45deg);
-            }
+    .button-yanitla:hover {
+        background-color: var(--hover-color);
+    }
 
-            .button-yanitla:hover {
-            background-color: var(--hover-color);
+        .button-yanitla:hover .arrow {
+            background: var(--secondary-color);
         }
-
-                .button-yanitla:hover .arrow {
-                background: var(--secondary-color);
-            }
 
             .button-yanitla:hover .arrow:before {
-                    right: 0;
-                }
+                right: 0;
+            }
 </style>
 
 <table class="table align-middle mb-0 bg-white">
@@ -98,7 +98,7 @@
                 <td>
                     <button type="button" class="btn btn-primary rounded-pill"><i class="fa-solid fa-envelope"></i>  Yanıtla</button>
                 </td>
-            </tr>   
+            </tr>
         }
     </tbody>
 </table>

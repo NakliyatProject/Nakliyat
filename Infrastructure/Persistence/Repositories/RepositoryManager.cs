@@ -7,14 +7,14 @@ namespace Persistence.Repositories
     {
         private readonly NakliyatDbContext _context;
 
-        private readonly IUserRepository _userRepository;
+        private readonly ICustomerRepository _customerRepository;
 
-        public RepositoryManager(IUserRepository userRepository)
+        public RepositoryManager(ICustomerRepository customerRepository)
         {
-            _userRepository = userRepository;
+            _customerRepository = customerRepository;
         }
 
-        public IUserRepository UserRepository => _userRepository;
+        public ICustomerRepository CustomerRepository => _customerRepository;
 
         public void Save()
         {

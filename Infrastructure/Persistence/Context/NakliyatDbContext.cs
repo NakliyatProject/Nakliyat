@@ -13,7 +13,7 @@ namespace Persistence.Context
     {
         public NakliyatDbContext(DbContextOptions options) : base(options) { }
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
 
 

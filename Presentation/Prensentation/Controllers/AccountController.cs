@@ -92,5 +92,10 @@ namespace Prensentation.Controllers
             return View();
         }
 
+        public IActionResult CompanyRegister()
+        {
+            return View();
+        }
+
     }
 }

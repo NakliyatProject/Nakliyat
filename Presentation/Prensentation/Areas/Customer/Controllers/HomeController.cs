@@ -9,5 +9,9 @@ namespace Prensentation.Areas.Customer.Controllers
         {
             return View();
         }
+        public IActionResult HelpPage()
+        {
+            return View();
+        }
     }    
 }

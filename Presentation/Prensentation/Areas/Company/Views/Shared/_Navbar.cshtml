@@ -68,16 +68,19 @@
         <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
             <ul class="navbar-nav flex-grow-1">
                 <li class="nav-item mx-lg-2">
-                    <a class="nav-link text-light btn-hover custom-button" asp-area="Company" asp-controller="Talep" asp-action="Index">Müþteriler</a>
+                    <a class="nav-link text-light btn-hover custom-button" asp-area="Company" asp-controller="Customer" asp-action="Index">Müþteriler</a>
                 </li>
                 <li class="nav-item mx-lg-2">
-                    <a class="nav-link text-light btn-hover custom-button" asp-area="Company" asp-controller="Teklif" asp-action="Index">Mevcut Talepler</a>
+                    <a class="nav-link text-light btn-hover custom-button" asp-area="Company" asp-controller="Talep" asp-action="AkistakiTalepler">Akýþtaki Talepler</a>
                 </li>
                 <li class="nav-item mx-lg-2">
-                    <a class="nav-link text-light btn-hover custom-button" asp-area="Company" asp-controller="Teklif" asp-action="Index">Ýþlem Geçmiþi</a>
+                    <a class="nav-link text-light btn-hover custom-button" asp-area="Company" asp-controller="Teklif" asp-action="Index">Geçmiþ Ýþlemler</a>
                 </li>
                 <li class="nav-item mx-lg-2">
-                    <a class="nav-link text-light btn-hover custom-button" asp-area="Company" asp-controller="Teklif" asp-action="Index">Destek</a>
+                    <a class="nav-link text-light btn-hover custom-button" asp-area="Company" asp-controller="Ekip" asp-action="Index">Ekiplerim</a>
+                </li>
+                <li class="nav-item mx-lg-2">
+                    <a class="nav-link text-light btn-hover custom-button" asp-area="Company" asp-controller="Home" asp-action="HelpPage">Destek</a>
                 </li>
             </ul>
             <ul class="navbar-nav">

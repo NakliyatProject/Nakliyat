@@ -14,12 +14,12 @@ namespace Persistence
         {
             services.AddDbContext<NakliyatDbContext>(options => options.UseNpgsql(Configuration.ConnectionString), ServiceLifetime.Singleton);
             services.AddScoped<IRepositoryManager, RepositoryManager>();
-            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
 
 
             services.AddScoped<IServiceManager, ServiceManager>();
             services.AddScoped<IAuthService, AuthService>();
-            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICustomerService, CustomerService>();
 
 
         }

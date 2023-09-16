@@ -1,0 +1,46 @@
+﻿<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 rounded-3">
+            <img src="https://ankaranakliye.org/wp-content/uploads/2021/03/esya-paketleme.jpg" alt="Taşıma İşlemi Resmi" class="img-fluid rounded-3">
+        </div>
+        <div class="col-md-6">
+            <h2 class="mt-4 text-black">Taşıma İşlemi Konusu</h2>
+            <ul class="list-group my-3">
+                <li class="list-group-item"><strong>Açıklama:&nbsp;</strong>lorem ipsum </li>
+                <li class="list-group-item"><strong>Varış:&nbsp;</strong> İstanbul</li>
+                <li class="list-group-item"><strong>Konum:&nbsp;</strong> Kars'tan</li>
+                <li class="list-group-item"><strong>Kilometre:&nbsp;</strong> 273 Km</li>
+            </ul>
+
+        </div>
+        <div class="text-center col-md-6 my-5">
+            <div class="display-6 mb-2">Teklifler</div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Fiyat</th>
+                        <th>Taşımacı</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(int i =0;i<5;i++)
+                    {
+
+                        <tr>
+                            <td>55$</td>
+                            <td>
+                                <img src="\images\nakliyat.jpeg"
+                                     alt=""
+                                     style="width: 30px; height: 30px"
+                                     class="rounded-pill" />
+                                <a asp-area="" asp-controller="" asp-action="">&nbsp;&nbsp;Yıldırım Taşımacılık A.Ş(91)</a>
+                            </td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

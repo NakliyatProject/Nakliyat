@@ -11,19 +11,19 @@ namespace Persistence.Service
 {
     public class ServiceManager : IServiceManager
     {
-        private readonly IUserService _userService;
+        private readonly ICustomerService _userService;
 
         private readonly IAuthService _authService;
 
-        public ServiceManager(IUserService userService, IAuthService authService)
+        public ServiceManager(ICustomerService userService, IAuthService authService)
         {
             _userService = userService;
             _authService = authService;
         }
 
-        public IUserService UserService => _userService;
+        public ICustomerService UserService => _userService;
 
-        public IUserService CompanyService 
+        public ICustomerService CompanyService 
         {
             set
             {

@@ -8,7 +8,7 @@ namespace Application.Repositories
 {
     public interface IRepositoryManager
     {
-        public IUserRepository UserRepository { get; }
+        public ICustomerRepository CustomerRepository { get; }
 
         void Save();
     }
