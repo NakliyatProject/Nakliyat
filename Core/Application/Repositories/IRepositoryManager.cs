@@ -9,7 +9,7 @@ namespace Application.Repositories
     public interface IRepositoryManager
     {
         public ICustomerRepository CustomerRepository { get; }
-
+        public ITasimaTalebiRepository TasimaTalebiRepository { get; }
         void Save();
     }
 }

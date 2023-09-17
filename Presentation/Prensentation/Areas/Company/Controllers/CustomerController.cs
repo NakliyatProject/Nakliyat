@@ -15,7 +15,7 @@ namespace Prensentation.Areas.Company.Controllers
 
         public IActionResult Index()
         {
-            var models = _manager.UserService.GetAll();
+            var models = _manager.CustomerService.GetAll();
             return View(models);
         }
     }

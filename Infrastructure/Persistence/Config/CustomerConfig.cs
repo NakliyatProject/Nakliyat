@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Persistence.Config
 {
-    class CustomerConfig : IEntityTypeConfiguration<Customer>
+    public class CustomerConfig : IEntityTypeConfiguration<Customer>
     {
         public void Configure(EntityTypeBuilder<Customer> builder)
         {

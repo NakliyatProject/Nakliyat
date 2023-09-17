@@ -13,56 +13,56 @@ namespace Persistence.Service
 {
     public class CustomerService : ICustomerService
     {
-        private readonly IRepositoryManager _repositoryManager;
+        private readonly IRepositoryManager _manager;
 
-        public CustomerService(IRepositoryManager repositoryManager)
+        public CustomerService(IRepositoryManager manager)
         {
-            _repositoryManager = repositoryManager;
+            _manager = manager;
         }
 
         public IEnumerable<Customer> GetAll(bool tracking = true)
         {
-            return _repositoryManager.CustomerRepository.GetAll(tracking);
+            return _manager.CustomerRepository.GetAll(tracking);
         }
         public IEnumerable<Customer> GetWhere(Expression<Func<Customer, bool>> method, bool tracking = true)
         {
-            return _repositoryManager.CustomerRepository.GetWhere(method, tracking);
+            return _manager.CustomerRepository.GetWhere(method, tracking);
         }
         public Task<Customer> GetSingleAsync(Expression<Func<Customer, bool>> method, bool tracking = true)
         {
-            return _repositoryManager.CustomerRepository.GetSingleAsync(method, tracking);
+            return _manager.CustomerRepository.GetSingleAsync(method, tracking);
         }
         public Task<Customer> GetByIdAsync(string id, bool tracking = true)
         {
-            return _repositoryManager.CustomerRepository.GetByIdAsync(id, tracking);
+            return _manager.CustomerRepository.GetByIdAsync(id, tracking);
         }
         public Task<bool> AddAsync(Customer model)
         {
-            return _repositoryManager.CustomerRepository.AddAsync(model);
+            return _manager.CustomerRepository.AddAsync(model);
         }
         public Task<bool> AddRangeAsync(List<Customer> datas)
         {
-            return _repositoryManager.CustomerRepository.AddRangeAsync(datas);
+            return _manager.CustomerRepository.AddRangeAsync(datas);
         }
         public bool Remove(Customer model)
         {
-            return _repositoryManager.CustomerRepository.Remove(model);
+            return _manager.CustomerRepository.Remove(model);
         }
         public bool RemoveRange(List<Customer> datas)
         {
-            return _repositoryManager.CustomerRepository.RemoveRange(datas);
+            return _manager.CustomerRepository.RemoveRange(datas);
         }
         public Task<bool> RemoveAsync(string id)
         {
-            return _repositoryManager.CustomerRepository.RemoveAsync(id);
+            return _manager.CustomerRepository.RemoveAsync(id);
         }
         public bool UpdateData(Customer model)
         {
-            return _repositoryManager.CustomerRepository.UpdateData(model);
+            return _manager.CustomerRepository.UpdateData(model);
         }
         public Task<int> SaveAsync()
         {
-            return _repositoryManager.CustomerRepository.SaveAsync();
+            return _manager.CustomerRepository.SaveAsync();
         }
 
     }

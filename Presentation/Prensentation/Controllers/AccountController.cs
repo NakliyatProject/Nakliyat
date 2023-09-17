@@ -9,6 +9,7 @@ namespace Prensentation.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
@@ -41,7 +42,10 @@ namespace Prensentation.Controllers
                     await _signInManager.SignOutAsync();
                     if ((await _signInManager.PasswordSignInAsync(user, model.Password, false, false)).Succeeded)
                     {
-                        return Redirect(model?.ReturnUrl ?? "/");
+                        if (_userManager.GetRolesAsync(user)==_roleManager.Roles.Where(r=>r.Name=="Customer"))
+                            return Redirect("/" + "Customer");
+                        else
+                            return Redirect("/" + "Company");
                     }
                 }
                 ModelState.AddModelError("Error", "Invalid username or passwoord.");
@@ -76,7 +80,7 @@ namespace Prensentation.Controllers
             if (result.Succeeded)
             {
                 var roleResult = await _userManager
-                    .AddToRoleAsync(user, "User");
+                    .AddToRoleAsync(user, "Customer");
 
                 if (roleResult.Succeeded)
                     return RedirectToAction("Login", new { ReturnUrl = "/" });
@@ -92,8 +96,40 @@ namespace Prensentation.Controllers
             return View();
         }
 
+
         public IActionResult CompanyRegister()
         {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CompanyRegister([FromForm] RegisterDto model)
+        {
+            var user = new IdentityUser
+            {
+                UserName = model.UserName,
+                Email = model.Email,
+            };
+            var result = await _userManager
+                .CreateAsync(user, model.Password);
+
+            if (result.Succeeded)
+            {
+                var roleResult = await _userManager
+                    .AddToRoleAsync(user, "Company");
+
+                if (roleResult.Succeeded)
+                    return RedirectToAction("Login", new { ReturnUrl = "/" });
+
+            }
+            else
+            {
+                foreach (var err in result.Errors)
+                {
+                    ModelState.AddModelError("", err.Description);
+                }
+            }
             return View();
         }
 

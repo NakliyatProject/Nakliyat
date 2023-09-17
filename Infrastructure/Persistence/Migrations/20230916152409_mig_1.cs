@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Persistence.Migrations
 {
-    public partial class init : Migration
+    public partial class mig_1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -63,6 +63,24 @@ namespace Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Customers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TasimaTalebleri",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Aciklama = table.Column<string>(type: "text", nullable: false),
+                    Baslangic = table.Column<string>(type: "text", nullable: false),
+                    Bitis = table.Column<string>(type: "text", nullable: false),
+                    Mesafe = table.Column<int>(type: "integer", nullable: false),
+                    EsyaImgUrl = table.Column<string>(type: "text", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TasimaTalebleri", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -176,10 +194,10 @@ namespace Persistence.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "1c318aa2-74c5-432d-837a-f9f3a9daf323", "c15eb404-a3c5-4b85-8306-43ab2f85bb32", "User", "USER" },
-                    { "2655fe6c-f85c-4d82-a20e-ecd534958f14", "c29a991e-9f41-4b75-b82e-2f82714bdf97", "Company", "Company" },
-                    { "2cc6bc37-90e2-4a0c-90fb-dddc91a71f34", "40366adb-13d7-497c-b5ee-688d59bb21bb", "Customer", "CUSTOMER" },
-                    { "c6e73aa2-b3b2-4123-9f94-21f7c3f43308", "c28fa22f-80ed-4828-a462-54a7fbbc20af", "Admin", "ADMIN" }
+                    { "324e7991-bd38-4643-a965-1a8148d23596", "072cbbcc-e436-4643-842d-ade4383a87c7", "Company", "Company" },
+                    { "977e9007-0998-43d1-bc46-2c843c5790fb", "36156bec-b3f3-4a79-befe-d5086b7b35c1", "User", "USER" },
+                    { "9e1e8a14-b594-4dfe-8c16-ab0593868240", "73d51167-e3b3-4677-825a-83237fb8820f", "Customer", "CUSTOMER" },
+                    { "e35cd3bf-c049-439c-866e-a2c35f604a95", "e1667afe-65e4-461a-9d45-af166cb7faa7", "Admin", "ADMIN" }
                 });
 
             migrationBuilder.InsertData(
@@ -187,11 +205,11 @@ namespace Persistence.Migrations
                 columns: new[] { "Id", "CreatedDate", "CustomerName", "CustomerSurname", "Email", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { new Guid("15e60aaa-8684-45ea-893e-e9ed01638096"), new DateTime(2023, 9, 16, 9, 34, 43, 413, DateTimeKind.Utc).AddTicks(2966), "Customer3", "Surname", "user3@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("76b46223-fc2b-4cb5-8eac-b59941a7290b"), new DateTime(2023, 9, 16, 9, 34, 43, 413, DateTimeKind.Utc).AddTicks(2964), "Customer2", "Surname", "user2@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("9ad671f1-e501-4c5a-97a1-d3dd6fd5846a"), new DateTime(2023, 9, 16, 9, 34, 43, 413, DateTimeKind.Utc).AddTicks(2962), "Customer1", "Surname", "user1@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("bd3d4a87-4cc1-4bb6-9743-ede88480f76e"), new DateTime(2023, 9, 16, 9, 34, 43, 413, DateTimeKind.Utc).AddTicks(2967), "Customer4", "Surname", "user4@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("d76710ab-4f32-4a93-8de2-73f874aadd13"), new DateTime(2023, 9, 16, 9, 34, 43, 413, DateTimeKind.Utc).AddTicks(2968), "Customer5", "Surname", "user5@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { new Guid("1c60a8ef-16b3-499c-9b6f-7f45c92514d0"), new DateTime(2023, 9, 16, 15, 24, 9, 315, DateTimeKind.Utc).AddTicks(9222), "Customer3", "Surname", "user3@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("1f1dcf50-69fa-4067-aef4-eeb169e21643"), new DateTime(2023, 9, 16, 15, 24, 9, 315, DateTimeKind.Utc).AddTicks(9219), "Customer2", "Surname", "user2@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("420d83ab-63fc-40fc-9b36-82bb90a40442"), new DateTime(2023, 9, 16, 15, 24, 9, 315, DateTimeKind.Utc).AddTicks(9224), "Customer4", "Surname", "user4@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("849e2c53-de7f-449c-8320-e78787f8b2f5"), new DateTime(2023, 9, 16, 15, 24, 9, 315, DateTimeKind.Utc).AddTicks(9225), "Customer5", "Surname", "user5@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("e72a4f18-02c6-4487-9726-39b3e1c79370"), new DateTime(2023, 9, 16, 15, 24, 9, 315, DateTimeKind.Utc).AddTicks(9213), "Customer1", "Surname", "user1@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.CreateIndex(
@@ -251,6 +269,9 @@ namespace Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "Customers");
+
+            migrationBuilder.DropTable(
+                name: "TasimaTalebleri");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

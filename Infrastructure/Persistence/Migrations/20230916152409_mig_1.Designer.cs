@@ -12,8 +12,8 @@ using Persistence.Context;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(NakliyatDbContext))]
-    [Migration("20230916093443_init")]
-    partial class init
+    [Migration("20230916152409_mig_1")]
+    partial class mig_1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -55,8 +55,8 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("9ad671f1-e501-4c5a-97a1-d3dd6fd5846a"),
-                            CreatedDate = new DateTime(2023, 9, 16, 9, 34, 43, 413, DateTimeKind.Utc).AddTicks(2962),
+                            Id = new Guid("e72a4f18-02c6-4487-9726-39b3e1c79370"),
+                            CreatedDate = new DateTime(2023, 9, 16, 15, 24, 9, 315, DateTimeKind.Utc).AddTicks(9213),
                             CustomerName = "Customer1",
                             CustomerSurname = "Surname",
                             Email = "user1@gmail.com",
@@ -64,8 +64,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("76b46223-fc2b-4cb5-8eac-b59941a7290b"),
-                            CreatedDate = new DateTime(2023, 9, 16, 9, 34, 43, 413, DateTimeKind.Utc).AddTicks(2964),
+                            Id = new Guid("1f1dcf50-69fa-4067-aef4-eeb169e21643"),
+                            CreatedDate = new DateTime(2023, 9, 16, 15, 24, 9, 315, DateTimeKind.Utc).AddTicks(9219),
                             CustomerName = "Customer2",
                             CustomerSurname = "Surname",
                             Email = "user2@gmail.com",
@@ -73,8 +73,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("15e60aaa-8684-45ea-893e-e9ed01638096"),
-                            CreatedDate = new DateTime(2023, 9, 16, 9, 34, 43, 413, DateTimeKind.Utc).AddTicks(2966),
+                            Id = new Guid("1c60a8ef-16b3-499c-9b6f-7f45c92514d0"),
+                            CreatedDate = new DateTime(2023, 9, 16, 15, 24, 9, 315, DateTimeKind.Utc).AddTicks(9222),
                             CustomerName = "Customer3",
                             CustomerSurname = "Surname",
                             Email = "user3@gmail.com",
@@ -82,8 +82,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("bd3d4a87-4cc1-4bb6-9743-ede88480f76e"),
-                            CreatedDate = new DateTime(2023, 9, 16, 9, 34, 43, 413, DateTimeKind.Utc).AddTicks(2967),
+                            Id = new Guid("420d83ab-63fc-40fc-9b36-82bb90a40442"),
+                            CreatedDate = new DateTime(2023, 9, 16, 15, 24, 9, 315, DateTimeKind.Utc).AddTicks(9224),
                             CustomerName = "Customer4",
                             CustomerSurname = "Surname",
                             Email = "user4@gmail.com",
@@ -91,13 +91,49 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d76710ab-4f32-4a93-8de2-73f874aadd13"),
-                            CreatedDate = new DateTime(2023, 9, 16, 9, 34, 43, 413, DateTimeKind.Utc).AddTicks(2968),
+                            Id = new Guid("849e2c53-de7f-449c-8320-e78787f8b2f5"),
+                            CreatedDate = new DateTime(2023, 9, 16, 15, 24, 9, 315, DateTimeKind.Utc).AddTicks(9225),
                             CustomerName = "Customer5",
                             CustomerSurname = "Surname",
                             Email = "user5@gmail.com",
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
+                });
+
+            modelBuilder.Entity("Domain.Entities.TasimaTalebi", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Aciklama")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Baslangic")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Bitis")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("EsyaImgUrl")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Mesafe")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TasimaTalebleri");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -128,29 +164,29 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1c318aa2-74c5-432d-837a-f9f3a9daf323",
-                            ConcurrencyStamp = "c15eb404-a3c5-4b85-8306-43ab2f85bb32",
+                            Id = "977e9007-0998-43d1-bc46-2c843c5790fb",
+                            ConcurrencyStamp = "36156bec-b3f3-4a79-befe-d5086b7b35c1",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "2655fe6c-f85c-4d82-a20e-ecd534958f14",
-                            ConcurrencyStamp = "c29a991e-9f41-4b75-b82e-2f82714bdf97",
+                            Id = "324e7991-bd38-4643-a965-1a8148d23596",
+                            ConcurrencyStamp = "072cbbcc-e436-4643-842d-ade4383a87c7",
                             Name = "Company",
                             NormalizedName = "Company"
                         },
                         new
                         {
-                            Id = "2cc6bc37-90e2-4a0c-90fb-dddc91a71f34",
-                            ConcurrencyStamp = "40366adb-13d7-497c-b5ee-688d59bb21bb",
+                            Id = "9e1e8a14-b594-4dfe-8c16-ab0593868240",
+                            ConcurrencyStamp = "73d51167-e3b3-4677-825a-83237fb8820f",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         },
                         new
                         {
-                            Id = "c6e73aa2-b3b2-4123-9f94-21f7c3f43308",
-                            ConcurrencyStamp = "c28fa22f-80ed-4828-a462-54a7fbbc20af",
+                            Id = "e35cd3bf-c049-439c-866e-a2c35f604a95",
+                            ConcurrencyStamp = "e1667afe-65e4-461a-9d45-af166cb7faa7",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });

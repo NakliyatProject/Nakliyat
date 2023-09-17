@@ -15,7 +15,7 @@ namespace Persistence.Config
         {
             builder.HasData(
                 new IdentityRole() { Name = "User", NormalizedName = "USER" },
-                new IdentityRole() { Name = "Company", NormalizedName = "Company" },
+                new IdentityRole() { Name = "Company", NormalizedName = "COMPANY" },
                 new IdentityRole() { Name = "Customer", NormalizedName = "CUSTOMER" },
                 new IdentityRole() { Name = "Admin", NormalizedName = "ADMIN" }
             );
