@@ -1,4 +1,5 @@
-﻿<div>
+﻿@model IEnumerable<TasimaTalebi>
+<div>
     <table class="table align-middle mb-0 bg-white">
         <thead class="bg-light">
             <tr>
@@ -10,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-            @for (int i = 0; i < 6; i++)
+            @foreach(var tlp in Model)
             {
                 <tr>
                     <td>
@@ -20,20 +21,20 @@
                                  style="width: 45px; height: 45px"
                                  class="rounded-3" />
                             <div class="ms-3">
-                                <p class="fw-bold mb-1">Taşıma İşlemi Konusu</p>
+                                <p class="fw-bold mb-1">@tlp.Aciklama</p>
                             </div>
                         </div>
                     </td>
                     <td>
-                        <p class="fw-normal mb-1">Varış: İstanbul</p>
-                        <p class="text-muted mb-0">Kars'tan</p>
+                        <p class="fw-normal mb-1">Varış: @tlp.Bitis</p>
+                        <p class="text-muted mb-0">@tlp.Baslangic 'tan</p>
                     </td>
                     <td>
                         <a class="rounded-3 d-inline btn btn-outline-danger btn-sm">Teklif Sayısı:83   </a>
                     </td>
-                    <td>273 Km</td>
+                    <td>@tlp.Mesafe</td>
                     <td>
-                        <a type="button" class="btn btn-outline-success" asp-area="Company" asp-controller="Talep" asp-action="GetTalep"><i class="fa-solid fa-truck-fast"></i>  Taşı</a>
+                        <a type="button" class="btn btn-outline-success" asp-area="Company" asp-controller="Talep" asp-action="GetTalep" asp-route-Id="@tlp.Id"><i class="fa-solid fa-truck-fast"></i>  Taşı</a>
                     </td>
                 </tr>
             }

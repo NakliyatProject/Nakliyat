@@ -1,18 +1,28 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Application.Service;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Prensentation.Areas.Company.Controllers
 {
     [Area("Company")]
     public class TalepController : Controller
     {
-        public IActionResult AkistakiTalepler()
+        private readonly IServiceManager _serviceManager;
+
+        public TalepController(IServiceManager serviceManager)
         {
-            return View();
+            _serviceManager = serviceManager;
         }
 
-        public IActionResult GetTalep()
+        public IActionResult AkistakiTalepler()
         {
-            return View();
+            var talepler = _serviceManager.TasimaTalebiService.GetAll();
+            return View(talepler);
+        }
+
+        public IActionResult GetTalep([FromRoute(Name = "id")] Guid id)
+        {
+            var talep = _serviceManager.TasimaTalebiService.GetAll().Where(t=>t.Id.Equals(id)).FirstOrDefault();
+            return View(talep);
         }
     }
 }

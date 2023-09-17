@@ -53,8 +53,8 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("5a3020a9-9666-4210-81e2-a88414cba11f"),
-                            CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4505),
+                            Id = new Guid("da6b744d-45af-407b-b4a5-15b85f074bf5"),
+                            CreatedDate = new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7183),
                             CustomerName = "Customer1",
                             CustomerSurname = "Surname",
                             Email = "user1@gmail.com",
@@ -62,8 +62,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6cf714db-7235-4da6-8878-a564b4fa3111"),
-                            CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4508),
+                            Id = new Guid("a1903ec3-9b8c-4255-a250-7003756c02e0"),
+                            CreatedDate = new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7186),
                             CustomerName = "Customer2",
                             CustomerSurname = "Surname",
                             Email = "user2@gmail.com",
@@ -71,8 +71,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("cc223b67-0570-4613-aedc-6e2ffe63b7d6"),
-                            CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4510),
+                            Id = new Guid("4cb71b96-06d0-4e89-ad19-8e57e841294c"),
+                            CreatedDate = new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7188),
                             CustomerName = "Customer3",
                             CustomerSurname = "Surname",
                             Email = "user3@gmail.com",
@@ -80,8 +80,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4206a69e-8580-44a6-a32a-405677d0b8c0"),
-                            CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4511),
+                            Id = new Guid("bc735ee9-9c69-429d-b8be-475ea0cbb4c0"),
+                            CreatedDate = new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7190),
                             CustomerName = "Customer4",
                             CustomerSurname = "Surname",
                             Email = "user4@gmail.com",
@@ -89,13 +89,63 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c56fd58b-eda7-4870-a271-c07c101a3e8c"),
-                            CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4513),
+                            Id = new Guid("aa8473f3-5d5a-4b15-ae8b-1d90cf80f31a"),
+                            CreatedDate = new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7192),
                             CustomerName = "Customer5",
                             CustomerSurname = "Surname",
                             Email = "user5@gmail.com",
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
+                });
+
+            modelBuilder.Entity("Domain.Entities.Ekip", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("AracImgUrl")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("AracName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("AracPlakasi")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("EkipLead")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("EkipName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("EkipRank")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("EkipTelNo")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("EkipYorumSayisi")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("durum")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Ekipler");
                 });
 
             modelBuilder.Entity("Domain.Entities.TasimaTalebi", b =>
@@ -135,55 +185,55 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("3b9c37eb-aece-4538-9417-d87d01f9f040"),
+                            Id = new Guid("440b2f77-61ec-447a-934e-ed34c4ae479c"),
                             Aciklama = "tasimatalebi1",
                             Baslangic = "istanbul",
                             Bitis = "kars",
-                            CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4955),
+                            CreatedDate = new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7729),
                             EsyaImgUrl = "laptop.jpeg",
                             Mesafe = 150,
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("9084b3f1-7100-41f1-a16d-1c7619eff551"),
+                            Id = new Guid("e26779cc-3224-4af5-9549-2137005bba23"),
                             Aciklama = "tasimatalebi2",
                             Baslangic = "istanbul",
                             Bitis = "ardahan",
-                            CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4960),
+                            CreatedDate = new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7731),
                             EsyaImgUrl = "laptop.jpeg",
                             Mesafe = 150,
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("03eacc1e-5fad-4bfb-a1c4-9e3de713fd6e"),
+                            Id = new Guid("5688bb8f-2260-4289-8cf2-158d1457c600"),
                             Aciklama = "tasimatalebi3",
                             Baslangic = "istanbul",
                             Bitis = "igdir",
-                            CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4961),
+                            CreatedDate = new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7733),
                             EsyaImgUrl = "laptop.jpeg",
                             Mesafe = 150,
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("39bae7d0-e7dd-49c5-a76d-7f89725a481a"),
+                            Id = new Guid("254ea49f-421d-422f-a792-5d11c077b070"),
                             Aciklama = "tasimatalebi4",
                             Baslangic = "istanbul",
                             Bitis = "agri",
-                            CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4963),
+                            CreatedDate = new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7735),
                             EsyaImgUrl = "laptop.jpeg",
                             Mesafe = 150,
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("73a280be-2177-4bca-9068-ff5fb563d11c"),
+                            Id = new Guid("132074d1-ad2b-43c3-a224-85acbaad8aaa"),
                             Aciklama = "tasimatalebi5",
                             Baslangic = "istanbul",
                             Bitis = "van",
-                            CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4964),
+                            CreatedDate = new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7736),
                             EsyaImgUrl = "laptop.jpeg",
                             Mesafe = 150,
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -218,29 +268,29 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "21eb7b00-244e-44b2-9308-cac8fd81ea0b",
-                            ConcurrencyStamp = "9bc464fb-fa21-487c-9f30-e00945c7fef9",
+                            Id = "4f9f9c0f-f0e9-48c0-9b5c-35859ab1d678",
+                            ConcurrencyStamp = "ed4336e7-fa1c-4bac-867f-067f99173ecc",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "95234b8e-cef3-4d31-889f-157786829974",
-                            ConcurrencyStamp = "6dc4be18-ec3e-45da-8caf-043570a28742",
+                            Id = "30b8ca64-17e2-49ed-8a4f-70a2f1412b70",
+                            ConcurrencyStamp = "e5cacc1c-ebb7-478c-8bd9-7fc7ca8e6721",
                             Name = "Company",
-                            NormalizedName = "Company"
+                            NormalizedName = "COMPANY"
                         },
                         new
                         {
-                            Id = "b9728508-bb4a-4163-ad64-d91f3b57b536",
-                            ConcurrencyStamp = "dedf3024-aa41-4058-b7f0-934e5d6f03ed",
+                            Id = "f6cff14c-1cde-458b-a2b5-5880570d1fe8",
+                            ConcurrencyStamp = "e6248ba6-3abf-4697-b7fd-6eec79609c1c",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         },
                         new
                         {
-                            Id = "cc56de89-988c-4b9d-b2af-0bf1ccb1f44b",
-                            ConcurrencyStamp = "ceaebe6f-4130-4802-bf2c-3d666ec84bc5",
+                            Id = "cb983aac-8f9f-4436-8bcb-d9b3cd3a74c8",
+                            ConcurrencyStamp = "0b5b6db0-9de7-40e7-a1cb-fbf94f1a2786",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });

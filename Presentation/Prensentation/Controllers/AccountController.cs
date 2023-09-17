@@ -11,10 +11,11 @@ namespace Prensentation.Controllers
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
 
         public IActionResult Index()
@@ -42,7 +43,8 @@ namespace Prensentation.Controllers
                     await _signInManager.SignOutAsync();
                     if ((await _signInManager.PasswordSignInAsync(user, model.Password, false, false)).Succeeded)
                     {
-                        if (_userManager.GetRolesAsync(user)==_roleManager.Roles.Where(r=>r.Name=="Customer"))
+                        bool isInRole = await _userManager.IsInRoleAsync(user, "Customer");
+                        if (isInRole)
                             return Redirect("/" + "Customer");
                         else
                             return Redirect("/" + "Company");

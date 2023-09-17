@@ -1,4 +1,4 @@
-﻿@model CompanyRegisterDto
+﻿@model RegisterDto
 <style>
     .body-home {
         background-image: url("https://wallpapercrafter.com/desktop2/734444-landscape-snowy-peak-lines-hills-dark-road-forest.jpg");
@@ -44,10 +44,10 @@
         <div>
             <div class="text-danger" asp-validation-summary="All"></div>
         </div>
-        <form method="post" asp-action="Register">
+        <form method="post" asp-action="CompanyRegister">
             <div class="form-group my-3">
-                <label asp-for="CompanyName">Şirket İsmi</label>
-                <input asp-for="CompanyName" class="form-control text-login text-light" />
+                <label asp-for="UserName">Şirket İsmi</label>
+                <input asp-for="UserName" class="form-control text-login text-light" />
 
             </div>
             <div class="form-group my-3">

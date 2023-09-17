@@ -15,6 +15,7 @@ namespace Persistence.Context
 
         public DbSet<Customer> Customers { get; set; }
         public DbSet<TasimaTalebi> TasimaTalebleri { get; set; }
+        public DbSet<Ekip> Ekipler{ get; set; }
 
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

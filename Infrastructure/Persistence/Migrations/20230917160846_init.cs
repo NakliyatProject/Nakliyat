@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Persistence.Migrations
 {
-    public partial class mig_1 : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -66,6 +66,28 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Ekipler",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    EkipName = table.Column<string>(type: "text", nullable: false),
+                    AracName = table.Column<string>(type: "text", nullable: false),
+                    AracPlakasi = table.Column<string>(type: "text", nullable: false),
+                    EkipLead = table.Column<string>(type: "text", nullable: false),
+                    AracImgUrl = table.Column<string>(type: "text", nullable: false),
+                    EkipTelNo = table.Column<string>(type: "text", nullable: false),
+                    durum = table.Column<int>(type: "integer", nullable: false),
+                    EkipYorumSayisi = table.Column<int>(type: "integer", nullable: false),
+                    EkipRank = table.Column<int>(type: "integer", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Ekipler", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "TasimaTalebleri",
                 columns: table => new
                 {
@@ -74,7 +96,7 @@ namespace Persistence.Migrations
                     Baslangic = table.Column<string>(type: "text", nullable: false),
                     Bitis = table.Column<string>(type: "text", nullable: false),
                     Mesafe = table.Column<int>(type: "integer", nullable: false),
-                    EsyaImgUrl = table.Column<string>(type: "text", nullable: false),
+                    EsyaImgUrl = table.Column<string>(type: "text", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
@@ -194,10 +216,10 @@ namespace Persistence.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "324e7991-bd38-4643-a965-1a8148d23596", "072cbbcc-e436-4643-842d-ade4383a87c7", "Company", "Company" },
-                    { "977e9007-0998-43d1-bc46-2c843c5790fb", "36156bec-b3f3-4a79-befe-d5086b7b35c1", "User", "USER" },
-                    { "9e1e8a14-b594-4dfe-8c16-ab0593868240", "73d51167-e3b3-4677-825a-83237fb8820f", "Customer", "CUSTOMER" },
-                    { "e35cd3bf-c049-439c-866e-a2c35f604a95", "e1667afe-65e4-461a-9d45-af166cb7faa7", "Admin", "ADMIN" }
+                    { "30b8ca64-17e2-49ed-8a4f-70a2f1412b70", "e5cacc1c-ebb7-478c-8bd9-7fc7ca8e6721", "Company", "COMPANY" },
+                    { "4f9f9c0f-f0e9-48c0-9b5c-35859ab1d678", "ed4336e7-fa1c-4bac-867f-067f99173ecc", "User", "USER" },
+                    { "cb983aac-8f9f-4436-8bcb-d9b3cd3a74c8", "0b5b6db0-9de7-40e7-a1cb-fbf94f1a2786", "Admin", "ADMIN" },
+                    { "f6cff14c-1cde-458b-a2b5-5880570d1fe8", "e6248ba6-3abf-4697-b7fd-6eec79609c1c", "Customer", "CUSTOMER" }
                 });
 
             migrationBuilder.InsertData(
@@ -205,11 +227,23 @@ namespace Persistence.Migrations
                 columns: new[] { "Id", "CreatedDate", "CustomerName", "CustomerSurname", "Email", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { new Guid("1c60a8ef-16b3-499c-9b6f-7f45c92514d0"), new DateTime(2023, 9, 16, 15, 24, 9, 315, DateTimeKind.Utc).AddTicks(9222), "Customer3", "Surname", "user3@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("1f1dcf50-69fa-4067-aef4-eeb169e21643"), new DateTime(2023, 9, 16, 15, 24, 9, 315, DateTimeKind.Utc).AddTicks(9219), "Customer2", "Surname", "user2@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("420d83ab-63fc-40fc-9b36-82bb90a40442"), new DateTime(2023, 9, 16, 15, 24, 9, 315, DateTimeKind.Utc).AddTicks(9224), "Customer4", "Surname", "user4@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("849e2c53-de7f-449c-8320-e78787f8b2f5"), new DateTime(2023, 9, 16, 15, 24, 9, 315, DateTimeKind.Utc).AddTicks(9225), "Customer5", "Surname", "user5@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("e72a4f18-02c6-4487-9726-39b3e1c79370"), new DateTime(2023, 9, 16, 15, 24, 9, 315, DateTimeKind.Utc).AddTicks(9213), "Customer1", "Surname", "user1@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { new Guid("4cb71b96-06d0-4e89-ad19-8e57e841294c"), new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7188), "Customer3", "Surname", "user3@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("a1903ec3-9b8c-4255-a250-7003756c02e0"), new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7186), "Customer2", "Surname", "user2@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("aa8473f3-5d5a-4b15-ae8b-1d90cf80f31a"), new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7192), "Customer5", "Surname", "user5@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("bc735ee9-9c69-429d-b8be-475ea0cbb4c0"), new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7190), "Customer4", "Surname", "user4@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("da6b744d-45af-407b-b4a5-15b85f074bf5"), new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7183), "Customer1", "Surname", "user1@gmail.com", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                });
+
+            migrationBuilder.InsertData(
+                table: "TasimaTalebleri",
+                columns: new[] { "Id", "Aciklama", "Baslangic", "Bitis", "CreatedDate", "EsyaImgUrl", "Mesafe", "UpdatedDate" },
+                values: new object[,]
+                {
+                    { new Guid("132074d1-ad2b-43c3-a224-85acbaad8aaa"), "tasimatalebi5", "istanbul", "van", new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7736), "laptop.jpeg", 150, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("254ea49f-421d-422f-a792-5d11c077b070"), "tasimatalebi4", "istanbul", "agri", new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7735), "laptop.jpeg", 150, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("440b2f77-61ec-447a-934e-ed34c4ae479c"), "tasimatalebi1", "istanbul", "kars", new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7729), "laptop.jpeg", 150, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("5688bb8f-2260-4289-8cf2-158d1457c600"), "tasimatalebi3", "istanbul", "igdir", new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7733), "laptop.jpeg", 150, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("e26779cc-3224-4af5-9549-2137005bba23"), "tasimatalebi2", "istanbul", "ardahan", new DateTime(2023, 9, 17, 16, 8, 45, 906, DateTimeKind.Utc).AddTicks(7731), "laptop.jpeg", 150, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.CreateIndex(
@@ -269,6 +303,9 @@ namespace Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "Customers");
+
+            migrationBuilder.DropTable(
+                name: "Ekipler");
 
             migrationBuilder.DropTable(
                 name: "TasimaTalebleri");

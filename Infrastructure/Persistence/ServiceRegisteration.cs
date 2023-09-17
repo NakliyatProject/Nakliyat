@@ -17,6 +17,7 @@ namespace Persistence
             services.AddScoped<IRepositoryManager, RepositoryManager>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<ITasimaTalebiRepository, TasimaTalebiRepository>();
+            services.AddScoped<IEkipRepository, EkipRepository>();
 
 
 
@@ -24,6 +25,7 @@ namespace Persistence
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<ITasimaTalebiService, TasimaTalebiService>();
+            services.AddScoped<IEkipService, EkipService>();
 
 
         }
