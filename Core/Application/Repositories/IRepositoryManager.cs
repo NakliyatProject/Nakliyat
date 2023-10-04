@@ -10,7 +10,6 @@ namespace Application.Repositories
     {
         public ICustomerRepository CustomerRepository { get; }
         public ITasimaTalebiRepository TasimaTalebiRepository { get; }
-        public IEkipRepository EkipRepository { get; }
         void Save();
     }
 }

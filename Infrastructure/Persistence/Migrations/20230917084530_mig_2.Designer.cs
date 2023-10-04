@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Persistence.Context;
@@ -11,9 +12,10 @@ using Persistence.Context;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(NakliyatDbContext))]
-    partial class NakliyatDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230917084530_mig_2")]
+    partial class mig_2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,13 +55,8 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-<<<<<<< HEAD
-                            Id = new Guid("34385d9b-3007-4495-9844-09bd81e79ad6"),
-                            CreatedDate = new DateTime(2023, 10, 4, 14, 57, 37, 859, DateTimeKind.Utc).AddTicks(2896),
-=======
                             Id = new Guid("5a3020a9-9666-4210-81e2-a88414cba11f"),
                             CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4505),
->>>>>>> parent of 8d21376 (Ekip işlemleri)
                             CustomerName = "Customer1",
                             CustomerSurname = "Surname",
                             Email = "user1@gmail.com",
@@ -67,13 +64,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
-                            Id = new Guid("c08a3f28-96ae-4537-b0c2-bec1c2749dab"),
-                            CreatedDate = new DateTime(2023, 10, 4, 14, 57, 37, 859, DateTimeKind.Utc).AddTicks(2900),
-=======
                             Id = new Guid("6cf714db-7235-4da6-8878-a564b4fa3111"),
                             CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4508),
->>>>>>> parent of 8d21376 (Ekip işlemleri)
                             CustomerName = "Customer2",
                             CustomerSurname = "Surname",
                             Email = "user2@gmail.com",
@@ -81,13 +73,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
-                            Id = new Guid("67cf3bbf-1527-4148-87c8-69e52d73782b"),
-                            CreatedDate = new DateTime(2023, 10, 4, 14, 57, 37, 859, DateTimeKind.Utc).AddTicks(2902),
-=======
                             Id = new Guid("cc223b67-0570-4613-aedc-6e2ffe63b7d6"),
                             CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4510),
->>>>>>> parent of 8d21376 (Ekip işlemleri)
                             CustomerName = "Customer3",
                             CustomerSurname = "Surname",
                             Email = "user3@gmail.com",
@@ -95,13 +82,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
-                            Id = new Guid("9e0e4943-5289-4349-b6dc-0986852ff466"),
-                            CreatedDate = new DateTime(2023, 10, 4, 14, 57, 37, 859, DateTimeKind.Utc).AddTicks(2920),
-=======
                             Id = new Guid("4206a69e-8580-44a6-a32a-405677d0b8c0"),
                             CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4511),
->>>>>>> parent of 8d21376 (Ekip işlemleri)
                             CustomerName = "Customer4",
                             CustomerSurname = "Surname",
                             Email = "user4@gmail.com",
@@ -109,13 +91,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-<<<<<<< HEAD
-                            Id = new Guid("cf8605e4-b807-451f-9f4e-99f4693e779d"),
-                            CreatedDate = new DateTime(2023, 10, 4, 14, 57, 37, 859, DateTimeKind.Utc).AddTicks(2921),
-=======
                             Id = new Guid("c56fd58b-eda7-4870-a271-c07c101a3e8c"),
                             CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4513),
->>>>>>> parent of 8d21376 (Ekip işlemleri)
                             CustomerName = "Customer5",
                             CustomerSurname = "Surname",
                             Email = "user5@gmail.com",
@@ -160,95 +137,55 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-<<<<<<< HEAD
-                            Id = new Guid("fd0a0866-3548-4623-9a55-48e4eee962fb"),
-                            Aciklama = "tasimatalebi1",
-                            Baslangic = "istanbul",
-                            Bitis = "kars",
-                            CreatedDate = new DateTime(2023, 10, 4, 14, 57, 37, 859, DateTimeKind.Utc).AddTicks(3412),
-=======
                             Id = new Guid("3b9c37eb-aece-4538-9417-d87d01f9f040"),
                             Aciklama = "tasimatalebi1",
                             Baslangic = "istanbul",
                             Bitis = "kars",
                             CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4955),
->>>>>>> parent of 8d21376 (Ekip işlemleri)
                             EsyaImgUrl = "laptop.jpeg",
                             Mesafe = 150,
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-<<<<<<< HEAD
-                            Id = new Guid("ba71d5e4-50a8-48bb-ae1d-5659534cfb10"),
-                            Aciklama = "tasimatalebi2",
-                            Baslangic = "istanbul",
-                            Bitis = "ardahan",
-                            CreatedDate = new DateTime(2023, 10, 4, 14, 57, 37, 859, DateTimeKind.Utc).AddTicks(3415),
-=======
                             Id = new Guid("9084b3f1-7100-41f1-a16d-1c7619eff551"),
                             Aciklama = "tasimatalebi2",
                             Baslangic = "istanbul",
                             Bitis = "ardahan",
                             CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4960),
->>>>>>> parent of 8d21376 (Ekip işlemleri)
                             EsyaImgUrl = "laptop.jpeg",
                             Mesafe = 150,
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-<<<<<<< HEAD
-                            Id = new Guid("7f5dbaae-bf3e-46fd-a74f-d304c536cfc7"),
-                            Aciklama = "tasimatalebi3",
-                            Baslangic = "istanbul",
-                            Bitis = "igdir",
-                            CreatedDate = new DateTime(2023, 10, 4, 14, 57, 37, 859, DateTimeKind.Utc).AddTicks(3416),
-=======
                             Id = new Guid("03eacc1e-5fad-4bfb-a1c4-9e3de713fd6e"),
                             Aciklama = "tasimatalebi3",
                             Baslangic = "istanbul",
                             Bitis = "igdir",
                             CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4961),
->>>>>>> parent of 8d21376 (Ekip işlemleri)
                             EsyaImgUrl = "laptop.jpeg",
                             Mesafe = 150,
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-<<<<<<< HEAD
-                            Id = new Guid("c57ebd04-c36d-478b-b565-d98d4f556f6c"),
-                            Aciklama = "tasimatalebi4",
-                            Baslangic = "istanbul",
-                            Bitis = "agri",
-                            CreatedDate = new DateTime(2023, 10, 4, 14, 57, 37, 859, DateTimeKind.Utc).AddTicks(3418),
-=======
                             Id = new Guid("39bae7d0-e7dd-49c5-a76d-7f89725a481a"),
                             Aciklama = "tasimatalebi4",
                             Baslangic = "istanbul",
                             Bitis = "agri",
                             CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4963),
->>>>>>> parent of 8d21376 (Ekip işlemleri)
                             EsyaImgUrl = "laptop.jpeg",
                             Mesafe = 150,
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-<<<<<<< HEAD
-                            Id = new Guid("07ae3a52-f1f8-4414-afe9-200c93639b53"),
-                            Aciklama = "tasimatalebi5",
-                            Baslangic = "istanbul",
-                            Bitis = "van",
-                            CreatedDate = new DateTime(2023, 10, 4, 14, 57, 37, 859, DateTimeKind.Utc).AddTicks(3419),
-=======
                             Id = new Guid("73a280be-2177-4bca-9068-ff5fb563d11c"),
                             Aciklama = "tasimatalebi5",
                             Baslangic = "istanbul",
                             Bitis = "van",
                             CreatedDate = new DateTime(2023, 9, 17, 8, 45, 29, 998, DateTimeKind.Utc).AddTicks(4964),
->>>>>>> parent of 8d21376 (Ekip işlemleri)
                             EsyaImgUrl = "laptop.jpeg",
                             Mesafe = 150,
                             UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -283,49 +220,29 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-<<<<<<< HEAD
-                            Id = "2b2548a0-7df9-4f77-b8ac-649a6eeaafa2",
-                            ConcurrencyStamp = "dff694bd-8b74-46a4-a18e-86fec91eba1f",
-=======
                             Id = "21eb7b00-244e-44b2-9308-cac8fd81ea0b",
                             ConcurrencyStamp = "9bc464fb-fa21-487c-9f30-e00945c7fef9",
->>>>>>> parent of 8d21376 (Ekip işlemleri)
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-<<<<<<< HEAD
-                            Id = "a9dea9cb-c482-4030-8bf8-024c216e4cbb",
-                            ConcurrencyStamp = "65926663-618b-4ea1-b7ca-9f684be00cee",
-=======
                             Id = "95234b8e-cef3-4d31-889f-157786829974",
                             ConcurrencyStamp = "6dc4be18-ec3e-45da-8caf-043570a28742",
->>>>>>> parent of 8d21376 (Ekip işlemleri)
                             Name = "Company",
                             NormalizedName = "Company"
                         },
                         new
                         {
-<<<<<<< HEAD
-                            Id = "ffbd7256-2e04-477b-afb5-6a0030145bfe",
-                            ConcurrencyStamp = "ddb91232-6a95-402d-a402-d85a1dc455e5",
-=======
                             Id = "b9728508-bb4a-4163-ad64-d91f3b57b536",
                             ConcurrencyStamp = "dedf3024-aa41-4058-b7f0-934e5d6f03ed",
->>>>>>> parent of 8d21376 (Ekip işlemleri)
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         },
                         new
                         {
-<<<<<<< HEAD
-                            Id = "aae1f252-ca00-408e-b2fa-cfba2b7d2c76",
-                            ConcurrencyStamp = "db9fb211-02ff-45a1-90ba-0302b3f3854a",
-=======
                             Id = "cc56de89-988c-4b9d-b2af-0bf1ccb1f44b",
                             ConcurrencyStamp = "ceaebe6f-4130-4802-bf2c-3d666ec84bc5",
->>>>>>> parent of 8d21376 (Ekip işlemleri)
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });

@@ -1,25 +1,17 @@
-﻿@model IEnumerable<Ekip>
-
-<div>
-    <div class="d-flex justify-content-end my-3">
-        <a class="btn btn-outline-success" asp-action="CreatePage">
-            <i class="fa fa-plus"></i>
-            Ekip Ekle
-        </a>
-    </div>
-
+﻿<div>
     <table class="table align-middle mb-0 bg-white">
         <thead class="bg-light">
             <tr>
                 <th>Araç Bilgileri</th>
                 <th>Ekip Adı</th>
-                <th>Telefon</th>                <th>Durum</th>
+                <th>Telefon</th>
+                <th>Durum</th>
                 <th class="text-center">Ekip Yorumları</th>
                 <th class="text-center">Düzenle</th>
             </tr>
         </thead>
         <tbody>
-            @foreach(var ekip in Model)
+            @for (int i = 0; i < 6; i++)
             {
                 <tr>
                     <td>
@@ -29,19 +21,19 @@
                                  style="width: 45px; height: 45px"
                                  class="rounded-pill" />
                             <div class="ms-3">
-                                <p class="fw-bold mb-1">@ekip.AracName</p>
+                                <p class="fw-bold mb-1">Ford Transit</p>
                             </div>
                         </div>
                     </td>
                     <td>
-                        <p class="fw-normal mb-1">@ekip.EkipName</p>
-                        <p class="text-muted mb-0">@ekip.EkipLead</p>
+                        <p class="fw-normal mb-1">Topalak</p>
+                        <p class="text-muted mb-0">Muhittin Topalak</p>
                     </td>
                     <td>
-                        @ekip.EkipTelNo
+                        05525554675
                     </td>
                     <td>
-                        <span class="badge badge-success rounded-pill d-inline text-white bg-success">0</span>
+                        <span class="badge badge-success rounded-pill d-inline text-white bg-success">Müsait</span>
                     </td>
                     <td class="text-center">
                         <a type="button" class="btn btn-warning " asp-area="Company" asp-controller="Talep" asp-action="GetTalep"><i class="fa-solid fa-comment text-white"></i>  Yorumlar</a>

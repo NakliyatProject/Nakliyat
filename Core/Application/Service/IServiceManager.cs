@@ -6,7 +6,6 @@ namespace Application.Service
     {
         ICustomerService CustomerService { get; }
         ITasimaTalebiService TasimaTalebiService { get; }
-        IEkipService EkipService { get; }
         IAuthService AuthService { get; }
 
     }
