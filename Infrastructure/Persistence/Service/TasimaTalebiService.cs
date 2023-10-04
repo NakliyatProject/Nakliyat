@@ -3,6 +3,7 @@ using Application.Service;
 using AutoMapper;
 using Domain.Dtos;
 using Domain.Entities;
+using Domain.Entities.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -81,5 +82,31 @@ namespace Persistence.Service
         {
             return _manager.TasimaTalebiRepository.UpdateData(model);
         }
+
+
+        //public async void TeklifOlustur(string talepId, string ekipId, decimal fiyat)
+        //{
+        //    try
+        //    {
+        //        TasimaTalebi talep = await _manager.TasimaTalebiRepository.GetByIdAsync(talepId, true);
+
+        //        Ekip ekip = await _manager.EkipRepository.GetByIdAsync(ekipId, true);
+
+
+        //        talep.AddTeklif(ekip, fiyat);
+
+
+        //        _manager.TasimaTalebiRepository.SaveAsync();
+        //    }
+        //    catch (ProjectException)
+        //    {
+        //        throw;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        //Log(e);
+        //        throw new Exception("Beklenmedik Bir Hata Oluştu. Lütfen tekrar deneyiniz");
+        //    }
+        //}
     }
 }

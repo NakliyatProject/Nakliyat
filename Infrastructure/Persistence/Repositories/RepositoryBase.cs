@@ -1,7 +1,9 @@
 ﻿using Application.Repositories;
+using Domain.Entities;
 using Domain.Entities.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Persistence.Context;
 using System.Linq.Expressions;
 
@@ -45,7 +47,14 @@ namespace Persistence.Repositories
             var query = Table.AsQueryable();
             if (!tracking)
                 query = query.AsNoTracking();
-            return await query.FirstOrDefaultAsync(data => data.Id == Guid.Parse(id));
+            
+            
+            T talep = await query.FirstOrDefaultAsync(data => data.Id == Guid.Parse(id));
+
+            if (talep == null)
+                throw new ProjectException("Taşıma Talebi Bulunamadı");
+
+            return talep;
         }
 
         public async Task<T> GetSingleAsync(Expression<Func<T, bool>> method, bool tracking = true)
